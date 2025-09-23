@@ -27,27 +27,24 @@ body {
 
 /* Header & Navigation */
 header {
-    background-color: rgba(247, 247, 247, 0.95);
+    background-color: rgba(247, 247, 247, 0.89);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    backdrop-filter: blur(10px);
 }
 
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 1.5rem 5%;
     max-width: 1400px;
     margin: 0 auto;
 }
 
 .logo {
-    margin-left: auto;
-    margin-right: 2rem;
     font-size: 1.8rem;
     font-weight: 700;
     color: var(--primary-green);
@@ -755,18 +752,10 @@ footer {
 
 @media (max-width: 768px) {
     header {
-        position: fixed;
+        background-color: rgba(247, 247, 247, 0.95);
         height: 60px;
-    }
-
-    nav {
-        padding: 0.5rem 1rem;
-    }
-
-    .logo {
-        margin-right: auto;
-        margin-left: 1rem;
-        font-size: 1.5rem;
+        display: flex;
+        align-items: center;
     }
 
     .nav-links {
@@ -776,11 +765,44 @@ footer {
         width: 100%;
         background-color: rgba(247, 247, 247, 0.95);
         backdrop-filter: blur(10px);
+        flex-direction: column;
+        padding: 1rem;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition: 0.3s ease;
     }
 
-    /* Adjust hero section for fixed header */
+    .nav-links.active {
+        left: 0;
+    }
+
+    .nav-links a {
+        color: var(--deep-navy);
+        padding: 0.8rem 1.5rem;
+        width: 100%;
+        text-align: center;
+        border-radius: 8px;
+    }
+
+    .nav-links a:hover {
+        background-color: rgba(7, 99, 99, 0.1);
+    }
+
+    .hamburger {
+        display: block;
+        margin-right: 1rem;
+        color: var(--deep-navy);
+    }
+
+    /* Adjust hero section to prevent overlap */
     .hero {
-        padding-top: 60px;
+        padding-top: 80px;
+        margin-top: 30px;
+    }
+
+    /* Add spacing between nav items */
+    .nav-links li {
+        width: 100%;
+        margin: 0.3rem 0;
     }
 }
 
