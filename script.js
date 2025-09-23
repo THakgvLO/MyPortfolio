@@ -175,3 +175,47 @@ function rotateTaglines() {
 
 // Start rotation after initial animation
 setInterval(rotateTaglines, 6000);
+
+// Track CV downloads
+downloadCV.addEventListener('click', function(e) {
+    // ...existing code...
+    gtag('event', 'cv_download', {
+        'event_category': 'engagement',
+        'event_label': 'CV Download'
+    });
+});
+
+// Track project views
+projectCards.forEach(card => {
+    card.addEventListener('click', () => {
+        // ...existing code...
+        gtag('event', 'project_view', {
+            'event_category': 'engagement',
+            'event_label': modalTitle.textContent
+        });
+    });
+});
+
+// Header scroll behavior
+let lastScroll = 0;
+const header = document.querySelector('header');
+
+window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+    
+    if (currentScroll <= 0) {
+        header.classList.remove('scroll-up');
+        return;
+    }
+    
+    if (currentScroll > lastScroll && !header.classList.contains('scroll-down')) {
+        // Scroll Down
+        header.classList.remove('scroll-up');
+        header.classList.add('scroll-down');
+    } else if (currentScroll < lastScroll && header.classList.contains('scroll-down')) {
+        // Scroll Up
+        header.classList.remove('scroll-down');
+        header.classList.add('scroll-up');
+    }
+    lastScroll = currentScroll;
+});
