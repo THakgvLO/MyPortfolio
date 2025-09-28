@@ -80,7 +80,7 @@ const modalLink = document.getElementById('modalLink');
 
 const projects = {
     1: {
-        title: "HydroInight - Water Quality Monitoring Platform",
+        title: "HydroInsight - Water Quality Monitoring Platform",
         image: "assets/project-images/southern-africa-rivers.jpg",
         tags: ["Python", "Javascript", "Data Visualization", "Leaflet Charts", "Statistics"],
         description: "A comprehensive dashboard that visualizes water quality parameters across South African provinces. This project automated the collection of data from the Department of Water and Sanitation's trusted source, the National Integrated Water Information System (NIWIS). Then it was processed using Python scripts, and displayed as an interactive map and visualization dashboard for stakeholders and the public.",
@@ -90,7 +90,7 @@ const projects = {
         live: "https://hydroinsight.netlify.app" // Only for HydroInsight
     },
     2: {
-        title: "Urban Heat and Climate Change Analysis",
+        title: "Analyzing Urban Heat and Climate Impacts in Pretoria",
         image: "assets/project-images/hot-cities-map.png",
         tags: ["Python", "Remote Sensing", "Spatial Analysis", "Urban Heat Islands", "Climate Change"],
         description: "This project investigates urban heat island effects in Pretoria using Python-based spatial analysis and remote sensing data. By examining temperature variations across the city and surrounding Gauteng region, the study reveals how land use and vegetation cover influence local climate dynamics. Peer-reviewed literature supports the methodology and interpretation, ensuring scientific rigor throughout.",
@@ -101,7 +101,7 @@ const projects = {
     3: {
     title: "ClearVue Business Intelligence System",
     image: "assets/project-images/bus-intelligence.png",
-    tags: ["Python", "Power BI", "Pandas", "Data Modelling", "MongoDB", "Semantic Cleanup", "Dashboard Automation", "Retail Intelligence", "Workflow Design"],
+    tags: ["Python", "Power BI", "Pandas", "Data Modelling", "MongoDB", "Semantic Cleanup", "Dashboard Automation", "Warehousing", "Retail Intelligence", "Workflow Design"],
     description: "This is a uni group project for Advanced Databases, the below link leads to the forked GitHub repository. The project automates the transformation of ClearVue's raw retail data into structured insights using Python scripting and Power BI dashboards. It includes semantic cleanup, customer category mapping, and dynamic filtering for sales analysis. Designed for scalability and reproducibility, the system supports future collaborators through clear documentation and modular code.",
     technologies: "Built with: Python, Jupyter Notebook, MongoDB, Kafka",
     challenges: "Challenge: Inconsistent category naming and fragmented data sources<br>Solution: Built a reusable data cleaning pipeline with rule-based mapping and documentation.",

@@ -892,3 +892,13 @@ a:focus, button:focus, .form-control:focus {
     display: none !important;
 }
 
+@media (max-width: 500px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card {
+        margin: 0 auto;
+        width: 100%;
+    }
+}
