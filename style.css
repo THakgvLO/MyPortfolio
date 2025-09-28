@@ -139,7 +139,7 @@ nav {
 }
 
 .hero h1 {
-    font-size: 3.5rem;
+    font-size: 3.3rem;
     margin-bottom: 1rem;
     color: var(--deep-navy);
     position: relative;
@@ -150,13 +150,13 @@ nav {
 }
 
 .tagline-container {
-    margin: 2rem 0;
-    min-height: 3rem;
+    margin: 2.2rem 0;
+    min-height: 3.2rem;
 }
 
 .tagline {
-    font-size: 1.5rem;
-    font-weight: 500;
+    font-size: 1.2rem;
+    font-weight: 450;
     color: var(--earth-brown);
     opacity: 0;
     transform: translateY(20px);
@@ -177,6 +177,21 @@ nav {
 .tagline-3 {
     animation-delay: 4s;
 }
+
+.divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, #b80404, transparent);
+  margin: 12px 0;
+  opacity: 0;
+  animation: fadeInDivider 0.8s ease forwards;
+}
+
+@keyframes fadeInDivider {
+  to {
+    opacity: 2;
+  }
+}
+
 
 .btn {
     display: inline-block;
