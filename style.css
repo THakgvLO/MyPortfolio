@@ -181,7 +181,7 @@ nav {
 .divider {
   height: 1px;
   background: linear-gradient(to right, transparent, #b80404, transparent);
-  margin: 12px 0;
+  margin: 8px 0;
   opacity: 0;
   animation: fadeInDivider 0.8s ease forwards;
 }
