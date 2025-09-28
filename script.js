@@ -80,22 +80,32 @@ const modalLink = document.getElementById('modalLink');
 
 const projects = {
     1: {
-        title: "Water Quality Monitoring Platform",
-        image: "https://images.unsplash.com/photo-1505118380757-91f5f5632de0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+        title: "HydroInight - Water Quality Monitoring Platform",
+        image: "assets/project-images/southern-africa-rivers.jpg",
         tags: ["Python", "Javascript", "Data Visualization", "Leaflet Charts", "Statistics"],
-        description: "A comprehensive dashboard that visualizes water quality parameters across South African provinces. This project automated the collection of data from multiple government APIs, processed it using Python scripts, and created an interactive Power BI dashboard for stakeholders.",
+        description: "A comprehensive dashboard that visualizes water quality parameters across South African provinces. This project automated the collection of data from the Department of Water and Sanitation's trusted source, the National Integrated Water Information System (NIWIS). Then it was processed using Python scripts, and displayed as an interactive map and visualization dashboard for stakeholders and the public.",
         technologies: "Built with: HTML, CSS, Javascript, Python, JSON",
-        challenges: "Challenge: Different data formats and inconsistent API responses. Solution: Created a robust data cleaning pipeline and implemented error handling to ensure continuous data flow.",
-        link: "https://github.com/THakgvLO/HydroInsight"
+        challenges: "Challenge: Different data formats and inconsistent API responses.<br>Solution: Created a robust data cleaning pipeline and implemented error handling to ensure continuous data flow.",
+        link: "https://github.com/THakgvLO/HydroInsight",
+        live: "https://hydroinsight.netlify.app" // Only for HydroInsight
     },
     2: {
         title: "Urban Heat and Climate Change Analysis",
-        image: "https://images.unsplash.com/photo-1543302094-76d0b288a6e0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+        image: "assets/project-images/hot-cities-map.png",
         tags: ["Python", "Remote Sensing", "Spatial Analysis", "Urban Heat Islands", "Climate Change"],
-        description: "This data analysis project analyzed urban heat islands in Pretoria using python and existing peer-reviewed articles. The analysis identified temperature variations across the city and the Gauteng region, and correlated them with land use patterns and vegetation cover.",
-        technologies: "Built with: Python, Google Colab, Plotly, Matplotlib",
-        challenges: "Challenge: Accuracy in statistical inference Solution: Used statistical values such as correlation and p-values to determine the level of accuracy for my inferences.",
-        link: "#"
+        description: "This project investigates urban heat island effects in Pretoria using Python-based spatial analysis and remote sensing data. By examining temperature variations across the city and surrounding Gauteng region, the study reveals how land use and vegetation cover influence local climate dynamics. Peer-reviewed literature supports the methodology and interpretation, ensuring scientific rigor throughout.",
+        technologies: "Built with: Python, Jupyter Notebook, Plotly, Matplotlib",
+        challenges: "Challenge: Ensuring statistical accuracy in climate inference<br>Solution: Applied correlation metrics and p-values to validate observed patterns",
+        link: "https://github.com/THakgvLO/climate-variability-sa"
+    },
+    3: {
+    title: "ClearVue Business Intelligence System",
+    image: "assets/project-images/bus-intelligence.png",
+    tags: ["Python", "Power BI", "Pandas", "Data Modelling", "MongoDB", "Semantic Cleanup", "Dashboard Automation", "Retail Intelligence", "Workflow Design"],
+    description: "This is a uni group project for Advanced Databases, the below link leads to the forked GitHub repository. The project automates the transformation of ClearVue's raw retail data into structured insights using Python scripting and Power BI dashboards. It includes semantic cleanup, customer category mapping, and dynamic filtering for sales analysis. Designed for scalability and reproducibility, the system supports future collaborators through clear documentation and modular code.",
+    technologies: "Built with: Python, Jupyter Notebook, MongoDB, Kafka",
+    challenges: "Challenge: Inconsistent category naming and fragmented data sources<br>Solution: Built a reusable data cleaning pipeline with rule-based mapping and documentation.",
+    link: "https://github.com/THakgvLO/ClearVue-BI-System"
     }
 };
 
@@ -107,6 +117,26 @@ projectCards.forEach(card => {
         modalTitle.textContent = project.title;
         modalImage.src = project.image;
         modalLink.href = project.link;
+        modalLink.onclick = () => {
+            window.open(project.link, '_blank');
+        };
+
+        const liveButton = document.getElementById('modalLive');
+
+        if (project.live) {
+            liveButton.style.display = 'inline-block';
+            liveButton.href = project.live;
+            liveButton.setAttribute('target', '_blank');
+            liveButton.setAttribute('rel', 'noopener noreferrer');
+            liveButton.onclick = (e) => {
+                e.preventDefault();
+                window.open(project.live, '_blank');
+            };
+        } else {
+            liveButton.style.display = 'none';
+        }
+
+
         
         // Clear and populate tags
         modalTags.innerHTML = '';
@@ -125,6 +155,13 @@ projectCards.forEach(card => {
         // Show modal
         modal.style.display = 'flex';
         document.body.style.overflow = 'hidden';
+    });
+
+    card.addEventListener('click', () => {
+        gtag('event', 'project_view', {
+            'event_category': 'engagement',
+            'event_label': modalTitle.textContent
+        });
     });
 });
 
@@ -152,6 +189,11 @@ downloadCV.addEventListener('click', function(e) {
     
     console.log('CV Download initiated');
     window.open(downloadUrl, '_blank');
+
+    gtag('event', 'cv_download', {
+        'event_category': 'engagement',
+        'event_label': 'CV Download'
+    });
 });
 
 // Tagline Animation
@@ -175,23 +217,3 @@ function rotateTaglines() {
 
 // Start rotation after initial animation
 setInterval(rotateTaglines, 6000);
-
-// Track CV downloads
-downloadCV.addEventListener('click', function(e) {
-    // ...existing code...
-    gtag('event', 'cv_download', {
-        'event_category': 'engagement',
-        'event_label': 'CV Download'
-    });
-});
-
-// Track project views
-projectCards.forEach(card => {
-    card.addEventListener('click', () => {
-        // ...existing code...
-        gtag('event', 'project_view', {
-            'event_category': 'engagement',
-            'event_label': modalTitle.textContent
-        });
-    });
-});
