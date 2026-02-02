@@ -106,6 +106,16 @@ const projects = {
     technologies: "Built with: Python, Jupyter Notebook, MongoDB, Kafka",
     challenges: "Challenge: Inconsistent category naming and fragmented data sources<br>Solution: Built a reusable data cleaning pipeline with rule-based mapping and documentation.",
     link: "https://github.com/THakgvLO/ClearVue-BI-System"
+    },
+    4: {
+    title: "EV Fleet Viability Model",
+    image: "assets/project-images/bus-intelligence.png",
+    tags: ["Python", "Data Science", "Machine Learning", "Data Modelling", "Artificial Intelligence", "Electric Vehicles"],
+    description: "This was a hackathon project for the SATNAC Industry Solutions Challenge 2025. The topic was on building a system that will allow Openserve to determine viable EV-charging sites around South Africa using Artificial Intelligence. ",
+    technologies: "Built with: Python, Javascript, Scikit-Learn",
+    challenges: "Challenge: Develop a decision-support tool to guide Openserve's transition to Electric Vehicles (EVs) in South Africa<br>Solution: Used K-Means clustering on weighted scores to generate Green/Amber/Red rollout categories.",
+    link: "https://github.com/THakgvLO/satnac-openserve-project",
+    live: "https://eagles-ev.netlify.app/"
     }
 };
 
@@ -184,7 +194,8 @@ const downloadCV = document.getElementById('downloadCV');
 
 downloadCV.addEventListener('click', function(e) {
     e.preventDefault();
-    const fileId = '1zmB4go5rItTamy0VvxHpdfp0Bd6xcxZl';
+    //const fileId = '1zmB4go5rItTamy0VvxHpdfp0Bd6xcxZl';
+    const fileId = '1I0yJkG5XCof4hyZ0udVAH5OX9J7hCeV8';
     const downloadUrl = `https://drive.google.com/uc?export=download&id=${fileId}`;
     
     console.log('CV Download initiated');
