@@ -38,7 +38,6 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Hello, I'm <span>Thakgalo Sehlola</span></h1>
             <p class="subtitle">Developing intelligent systems to turn data into decisions</p>
             
             <div class="tagline-container">
@@ -215,83 +214,48 @@
         </div>
         
         <div class="cv-container">
-            <div class="cv-download fade-in">
-                <h3>Download My Resume</h3>
-                <p>Get the full picture of my education, skills, projects, and experience in Data and GIS analysis.</p>
-                <a href="#" class="btn" id="downloadCV" aria-label="Download CV">
-    <i class="fas fa-download"></i> Download CV
-</a>
-            </div>
-            
-            <div class="timeline">
-                <!-- Timeline Item 1 -->
-                <div class="timeline-item left fade-in">
-                    <div class="timeline-content">
-                        <h3>BSc in Environmental Sciences Degree</h3>
-                        <span class="date">2023 - 2025</span>
-                        <span class="location">North-West University</span>
-                        <p>Majoring in Geography and Computer Science, focusing on the intersection of environmental analysis and data science.</p>
-                        <p>Modules include:</p>
-                        <div class="modules-grid">
-    <ul>
-        <li>Advanced Databases</li>
-        <li>Data Analytics</li>
-        <li>Object-Oriented Programming</li>
-        <li>Geographic Information Systems</li>
-        <li>Data Structures & Algorithms</li>
-        <li>Computer Networks</li>
-        <li>Inferential Statistics</li>
-        <li>Structured Programming</li>
-        <li>Operating Systems</li>
-        <li>Physical Geography</li>
-        <li>Environmental Management</li>
-        <li>Applied Climatology</li>
-    </ul>
-</div>
-                    </div>
-                </div>
-                
-                <!-- Timeline Item 2 -->
-                <div class="timeline-item right fade-in">
-                    <div class="timeline-content">
-                        <h3>C++ Student Assistant</h3>
-                        <span class="date">June 2024 - October 2024</span>
-                        <span class="location">North-West University</span>
-                        <p>Assisted in teaching C++ programming concepts within the Structured Programming module, provided debugging support to students, and facilitated laboratory sessions.</p>
-                    </div>
+            <div class="journey-grid">
+                <div class="journey-summary fade-in">
+                    <h3>Analytical Engineer & Data Scientist</h3>
+                    <p>Building data-driven systems that turn information into reliable decision-making tools, with a focus on reproducibility, automation, and spatial insight.</p>
+                    <a href="#" class="btn" id="downloadCV" aria-label="Download CV">
+                        <i class="fas fa-download"></i> Download CV
+                    </a>
                 </div>
 
-                 <!-- Timeline Item 3 -->
-                <div class="timeline-item left fade-in">
-                    <div class="timeline-content">
-                        <h3>Sports Subcommittee </h3>
-                        <h4>E-Sports Vice Chair </h4>
-                        <span class="date">October 2024 - November 2025</span>
-                        <span class="location">North-West University</span>
-                        <p>Collaborated with fellow committee members to organize and promote campus sports events, encouraging student participation and fostering school spirit through inclusive athletic initiatives.</p>
+                <div class="journey-list fade-in">
+                    <div class="journey-item">
+                        <div class="journey-meta">
+                            <span class="journey-year">2023 – 2025</span>
+                            <span class="journey-role">BSc in Environmental Sciences</span>
+                        </div>
+                        <div class="journey-desc">North-West University — Geography & Computer Science</div>
                     </div>
-                </div>
-                
-                <!-- Timeline Item 4 -->
-                <div class="timeline-item right fade-in">
-                    <div class="timeline-content">
-                        <h3>Geography Subject Representative</h3>
-                        <span class="date">March 2025 - November 2025</span>
-                        <span class="location">North-West University</span>
-                        <p>Liaised between students and Geography module lecturers to streamline communication, as well as advocated for inclusive academic representation.</p>
-                    </div>
-                </div>
 
-                <!-- Timeline Item 5 -->
-                <div class="timeline-item left fade-in">
-                    <div class="timeline-content">
-                        <h3>Statistics SI Facilitator</h3>
-                        <span class="date">August 2025 - October 2025</span>
-                        <span class="location">North-West University</span>
-                        <p>Facilitated peer learning sessions focused on foundational statistical thinking, promoting collaborative problem-solving and academic confidence among students.</p>
+                    <div class="journey-item">
+                        <div class="journey-meta">
+                            <span class="journey-year">2024</span>
+                            <span class="journey-role">C++ Student Assistant</span>
+                        </div>
+                        <div class="journey-desc">North-West University — Supported labs and debugging sessions for structured programming students.</div>
+                    </div>
+
+                    <div class="journey-item">
+                        <div class="journey-meta">
+                            <span class="journey-year">2024 – 2025</span>
+                            <span class="journey-role">E-Sports Vice Chair</span>
+                        </div>
+                        <div class="journey-desc">Organized and promoted campus events to increase student engagement in competitive gaming.</div>
+                    </div>
+
+                    <div class="journey-item">
+                        <div class="journey-meta">
+                            <span class="journey-year">2025</span>
+                            <span class="journey-role">Statistics SI Facilitator</span>
+                        </div>
+                        <div class="journey-desc">Led peer study sessions to strengthen statistical understanding and teamwork.</div>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -317,36 +281,6 @@
                 <p><strong>Location:</strong> South Africa</p>
             </div>
             
-            <div class="contact-form fade-in">
-                <h3>Send Me a Message</h3>
-                <form id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-    <input type="hidden" name="form-name" value="contact" />
-    <p class="hidden">
-        <label>Don't fill this out if you're human: <input name="bot-field" /></label>
-    </p>
-    <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" class="form-control" required>
-    </div>
-    
-    <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" class="form-control" required>
-    </div>
-    
-    <div class="form-group">
-        <label for="subject">Subject</label>
-        <input type="text" id="subject" name="subject" class="form-control" required>
-    </div>
-    
-    <div class="form-group">
-        <label for="message">Message</label>
-        <textarea id="message" name="message" class="form-control" required></textarea>
-    </div>
-    
-    <button type="submit" class="btn">Send Message</button>
-</form>
-            </div>
         </div>
     </section>
 
@@ -354,7 +288,7 @@
     <footer>
         <div class="footer-content">
             <div class="footer-logo">Thakgalo Sehlola</div>
-            <p>Data Analyst | GIS Analyst | AI and ML Enthusiast</p>
+            <p>Analytical Engineer | Data Scientist</p>
             
             <ul class="footer-links">
                 <li><a href="#home">Home</a></li>

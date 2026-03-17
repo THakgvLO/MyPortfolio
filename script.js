@@ -15,9 +15,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         
         const targetId = this.getAttribute('href');
         const targetElement = document.querySelector(targetId);
+        const headerHeight = document.querySelector('header').offsetHeight;
         
         window.scrollTo({
-            top: targetElement.offsetTop - 80,
+            top: targetElement.offsetTop - headerHeight - 10,
             behavior: 'smooth'
         });
     });
@@ -38,32 +39,13 @@ const revealOnScroll = () => {
     });
 };
 
-// Timeline animation
-const timelineItems = document.querySelectorAll('.timeline-item');
-
-const revealTimeline = () => {
-    const windowHeight = window.innerHeight;
-    
-    timelineItems.forEach((item, index) => {
-        const elementTop = item.getBoundingClientRect().top;
-        
-        if (elementTop < windowHeight - 100) {
-            setTimeout(() => {
-                item.classList.add('visible');
-            }, index * 300);
-        }
-    });
-};
-
 window.addEventListener('scroll', () => {
     revealOnScroll();
-    revealTimeline();
 });
 
 // Trigger on load
 window.addEventListener('load', () => {
     revealOnScroll();
-    revealTimeline();
 });
 
 // Project Modal
