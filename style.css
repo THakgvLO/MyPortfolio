@@ -499,6 +499,13 @@ section {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
+.modal-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
 /* CV Section */
 .cv-container {
     display: grid;
@@ -735,23 +742,31 @@ footer {
 @media (max-width: 768px) {
     header {
         background-color: var(--white);
-        height: 50px;
+        height: 60px;
         display: flex;
         align-items: center;
         border-bottom: 1px solid var(--grey);
     }
 
     nav {
-        padding: 0.75rem 5%;
+        padding: 1rem 5%;
+        width: 100%;
+        justify-content: space-between;
     }
 
     .logo {
         font-size: 1rem;
+        flex: 1;
+    }
+
+    .hamburger {
+        margin-left: auto;
+        font-size: 1.1rem;
     }
 
     .nav-links {
         position: fixed;
-        top: 50px;
+        top: 60px;
         left: -100%;
         width: 100%;
         background-color: var(--white);
@@ -828,7 +843,7 @@ footer {
     .hero {
         min-height: 50vh;
         padding: 1rem 5%;
-        margin-top: 50px;
+        margin-top: 60px;
     }
 
     .hero .subtitle {
