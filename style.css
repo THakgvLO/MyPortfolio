@@ -786,6 +786,44 @@ footer {
         font-size: 1.1rem;
     }
 
+    /* Horizontal scrolling for skills on mobile */
+    .skills-container {
+        display: flex;
+        overflow-x: auto;
+        gap: 1rem;
+        padding-bottom: 1rem;
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE and Edge */
+    }
+
+    .skills-container::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera */
+    }
+
+    .skill-category {
+        flex: 0 0 280px;
+        min-width: 280px;
+    }
+
+    /* Horizontal scrolling for projects on mobile */
+    .projects-grid {
+        display: flex;
+        overflow-x: auto;
+        gap: 1.5rem;
+        padding-bottom: 1rem;
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE and Edge */
+    }
+
+    .projects-grid::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera */
+    }
+
+    .project-card {
+        flex: 0 0 300px;
+        min-width: 300px;
+    }
+
     /* Compressed hero for mobile */
     .hero {
         min-height: 50vh;
