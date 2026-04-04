@@ -1,6 +1,6 @@
 /* Root variables */
 :root {
-    --bg: #0e3325;
+    --bg: #055c3b;
     --surface: #e8f5f0;
     --surface-alt: #ffffff;
     --grey: #d2d9d4;
@@ -65,7 +65,6 @@ nav {
     font-family: 'Roboto', Arial, sans-serif;
     background-color: transparent;
     padding: 1rem 1.4rem;
-    margin-right: -1.2rem;
     border-radius: 0;
 }
 
@@ -872,7 +871,10 @@ footer {
         display: block;
         margin-left: auto;
         color: var(--black);
-        font-size: 1.1rem;
+        font-size: 1.3rem;
+        padding: 0.5rem;
+        position: relative;
+        z-index: 1100;
     }
 
     /* Horizontal scrolling for skills on mobile */
