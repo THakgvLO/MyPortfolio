@@ -1,19 +1,19 @@
 /* Root variables */
 :root {
-    --bg: #055c3b;
-    --surface: #e8f5f0;
-    --surface-alt: #ffffff;
-    --grey: #d2d9d4;
-    --grey-dark: #4a4a4a;
-    --grey-light: #eef1ed;
-    --text: #333333;
-    --text-muted: #666666;
-    --accent: #9f8567;
-    --accent-dark: #8b745d;
-    --accent-light: #d2c2a7;
-    --peach: #9f8567;
-    --peach-dark: #8b745d;
-    --peach-light: #d2c2a7;
+    --bg: #021b2b;
+    --surface: #05466e;
+    --surface-alt: #033861;
+    --grey: #cad6e0;
+    --grey-dark: #9bb0be;
+    --grey-light: #dae7f0;
+    --text: #eef5fb;
+    --text-muted: #c7d6e2;
+    --accent: #d4a574;
+    --accent-dark: #d4a574;
+    --accent-light: #d4a574;
+    --peach: #d4a574;
+    --peach-dark: #d4a574;
+    --peach-light: #d4a574;
     --white: #ffffff;
     --black: #000000;
     --transition: all 0.3s ease;
@@ -36,7 +36,7 @@ body {
 
 /* Header & Navigation */
 header {
-    background-color: rgba(14, 51, 37, 0.96);
+    background-color: rgba(11, 64, 109, 0.96);
     border-bottom: 1px solid rgba(210, 217, 212, 0.15);
     position: fixed;
     width: 100%;
@@ -51,7 +51,7 @@ nav {
     padding: 0;
     max-width: 1400px;
     margin: 0 auto;
-    background: rgba(14, 51, 37, 0.97);
+    background: rgba(3, 59, 109, 0.97);
     border-radius: 8px;
     overflow: hidden;
 }
@@ -842,10 +842,10 @@ footer {
         top: 60px;
         left: -100%;
         width: 100%;
-        background-color: var(--white);
+        background-color: var(--bg);
         flex-direction: column;
         padding: 1rem;
-        border-top: 1px solid var(--grey);
+        border-top: 1px solid rgba(226, 229, 223, 0.13);
         transition: 0.3s ease;
     }
 
@@ -854,7 +854,7 @@ footer {
     }
 
     .nav-links a {
-        color: var(--black);
+        color: var(--grey-light);
         padding: 0.6rem 1rem;
         width: 100%;
         text-align: center;
@@ -863,8 +863,8 @@ footer {
     }
 
     .nav-links a:hover {
-        background-color: var(--grey-light);
-        color: var(--peach);
+        background-color: rgba(226, 229, 223, 0.12);
+        color: var(--accent-light);
     }
 
     .hamburger {
