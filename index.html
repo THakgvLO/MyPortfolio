@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thakgalo Sehlola | Data Analyst | Environmental Scientist </title>
+    <title>Data Scientist | Analytics Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
         
@@ -89,7 +92,7 @@
                 <h3>Cloud & Automation</h3>
                 <div class="skills-list">
                     <div class="skill-badge"><i class="fab fa-aws"></i> AWS</div>
-                    <div class="skill-badge"><i class="fas fa-robot"></i> Azure</div>
+                    <div class="skill-badge"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/microsoftazure.svg" alt="Azure logo" class="skill-logo"> Azure</div>
                     <div class="skill-badge"><i class="fas fa-robot"></i> Flowgear</div>
                     <div class="skill-badge"><i class="fas fa-server"></i> Cloud Architecture</div>
                     <div class="skill-badge"><i class="fas fa-sync-alt"></i> Workflow Automation</div>
@@ -245,37 +248,70 @@
                     </a>
                 </div>
 
-                <div class="journey-list fade-in">
-                    <div class="journey-item">
-                        <div class="journey-meta">
-                            <span class="journey-year">2023 – 2025</span>
-                            <span class="journey-role">BSc in Environmental Sciences</span>
-                        </div>
-                        <div class="journey-desc">North-West University — Geography & Computer Science</div>
+                <div class="journey-container fade-in">
+                    <div class="year-tabs">
+                        <button class="year-tab active" onclick="showYear('2024-2025')">2024-2025</button>
+                        <button class="year-tab" onclick="showYear('2025-2026')">2025-2026</button>
                     </div>
 
-                    <div class="journey-item">
-                        <div class="journey-meta">
-                            <span class="journey-year">2024</span>
-                            <span class="journey-role">C++ Student Assistant</span>
+                    <div class="journey-group" id="group-2024-2025">
+                        <div class="journey-item">
+                            <div class="journey-meta">
+                                <span class="journey-year">2023 – 2025</span>
+                                <span class="journey-role">BSc in Environmental Sciences</span>
+                            </div>
+                            <div class="journey-desc">North-West University — Geography & Computer Science</div>
                         </div>
-                        <div class="journey-desc">North-West University — Supported labs and debugging sessions for structured programming students.</div>
+
+                        <div class="journey-item">
+                            <div class="journey-meta">
+                                <span class="journey-year">2024</span>
+                                <span class="journey-role">C++ Student Assistant</span>
+                            </div>
+                            <div class="journey-desc">North-West University — Supported labs and debugging sessions for structured programming students.</div>
+                        </div>
+
+                        <div class="journey-item">
+                            <div class="journey-meta">
+                                <span class="journey-year">2024 – 2025</span>
+                                <span class="journey-role">E-Sports Vice Chair</span>
+                            </div>
+                            <div class="journey-desc">Organized and promoted campus events to increase student engagement in competitive gaming.</div>
+                        </div>
+
+                        <div class="journey-item">
+                            <div class="journey-meta">
+                                <span class="journey-year">2025</span>
+                                <span class="journey-role">Statistics SI Facilitator</span>
+                            </div>
+                            <div class="journey-desc">Led peer study sessions to strengthen statistical understanding and teamwork.</div>
+                        </div>
                     </div>
 
-                    <div class="journey-item">
-                        <div class="journey-meta">
-                            <span class="journey-year">2024 – 2025</span>
-                            <span class="journey-role">E-Sports Vice Chair</span>
+                    <div class="journey-group" id="group-2025-2026" style="display:none;">
+                        <div class="journey-item">
+                            <div class="journey-meta">
+                                <span class="journey-year">2025</span>
+                                <span class="journey-role">Statistics SI Facilitator</span>
+                            </div>
+                            <div class="journey-desc">Led peer study sessions to strengthen statistical understanding and teamwork.</div>
                         </div>
-                        <div class="journey-desc">Organized and promoted campus events to increase student engagement in competitive gaming.</div>
-                    </div>
 
-                    <div class="journey-item">
-                        <div class="journey-meta">
-                            <span class="journey-year">2025</span>
-                            <span class="journey-role">Statistics SI Facilitator</span>
+                        <div class="journey-item">
+                            <div class="journey-meta">
+                                <span class="journey-year">Nov 2025 – April 2026</span>
+                                <span class="journey-role">Data Science Intern</span>
+                            </div>
+                            <div class="journey-desc">Umuzi.org — Gained hands-on experience in data analysis and machine learning projects.</div>
                         </div>
-                        <div class="journey-desc">Led peer study sessions to strengthen statistical understanding and teamwork.</div>
+
+                        <div class="journey-item">
+                            <div class="journey-meta">
+                                <span class="journey-year">April 2026 – Present</span>
+                                <span class="journey-role">Test Automation Engineer</span>
+                            </div>
+                            <div class="journey-desc">STS Holdings — Developing automated testing frameworks for software quality assurance.</div>
+                        </div>
                     </div>
                 </div>
             </div>

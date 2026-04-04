@@ -24,6 +24,21 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// Year Tabs Toggle
+function showYear(year) {
+    // Hide all groups
+    document.querySelectorAll('.journey-group').forEach(group => {
+        group.style.display = 'none';
+    });
+    // Show selected group
+    document.getElementById('group-' + year).style.display = 'block';
+    // Update active tab
+    document.querySelectorAll('.year-tab').forEach(tab => {
+        tab.classList.remove('active');
+    });
+    event.target.classList.add('active');
+}
+
 // Scroll Reveal Animation
 const fadeElements = document.querySelectorAll('.fade-in');
 
