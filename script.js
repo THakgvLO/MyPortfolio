@@ -97,7 +97,7 @@ const projects = {
     },
     3: {
     title: "ClearVue Business Intelligence System",
-    image: "assets/project-images/bus-intelligence.png",
+    image: "assets/project-images/data-analytics--business-intelligence-maturity-model---infographic-01-1.jpg",
     tags: ["Python", "Power BI", "Pandas", "Data Modelling", "MongoDB", "Semantic Cleanup", "Dashboard Automation", "Warehousing", "Retail Intelligence", "Workflow Design"],
     description: "This is a uni group project for Advanced Databases, the below link leads to the forked GitHub repository. The project automates the transformation of ClearVue's raw retail data into structured insights using Python scripting and Power BI dashboards. It includes semantic cleanup, customer category mapping, and dynamic filtering for sales analysis. Designed for scalability and reproducibility, the system supports future collaborators through clear documentation and modular code.",
     technologies: "Built with: Python, Jupyter Notebook, MongoDB, Kafka",
@@ -106,7 +106,7 @@ const projects = {
     },
     4: {
     title: "EV Fleet Viability Model",
-    image: "assets/project-images/bus-intelligence.png",
+    image: "assets/project-images/ev.jpeg",
     tags: ["Python", "Data Science", "Machine Learning", "Data Modelling", "Artificial Intelligence", "Electric Vehicles"],
     description: "This was a hackathon project for the SATNAC Industry Solutions Challenge 2025. The topic was on building a system that will allow Openserve to determine viable EV-charging sites around South Africa using Artificial Intelligence. ",
     technologies: "Built with: Python, Javascript, Scikit-Learn",
