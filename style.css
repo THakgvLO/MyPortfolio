@@ -130,7 +130,7 @@ nav {
 
 /* Hero Section */
 .hero {
-    min-height: 60vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -211,6 +211,44 @@ nav {
   }
 }
 
+/* Hero Animations */
+.hero-animations {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.anim-icon {
+    position: absolute;
+    font-size: 2.5rem;
+    color: var(--accent);
+    opacity: 0.15;
+    transition: opacity 0.3s ease;
+}
+
+.anim-icon:hover {
+    opacity: 0.25;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px) translateX(0px);
+    }
+    25% {
+        transform: translateY(-20px) translateX(10px);
+    }
+    50% {
+        transform: translateY(-40px) translateX(0px);
+    }
+    75% {
+        transform: translateY(-20px) translateX(-10px);
+    }
+}
 
 .btn {
     display: inline-block;
@@ -713,7 +751,7 @@ section {
 
 .contact-info {
     background-color: var(--bg);
-    padding: 2rem;
+    padding: 1.5rem;
     border-radius: 4px;
     border: 1px solid rgba(210, 217, 212, 0.18);
     width: min(560px, 100%);
@@ -726,11 +764,34 @@ section {
 }
 
 .contact-info h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    margin-bottom: 0.75rem;
     color: #e9ece8;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-weight: 500;
+}
+
+/* Freelancing section - override contact-info width */
+#freelancing .contact-info {
+    width: 100%;
+    max-width: 1400px;
+    text-align: center;
+}
+
+#freelancing .contact-info h3 {
+    text-align: center;
+}
+
+#freelancing .contact-info > p {
+    text-align: center;
+}
+
+#freelancing .btn {
+    justify-content: center;
+}
+
+#freelancing .detail-group {
+    text-align: left;
 }
 
 .social-links {
@@ -795,6 +856,50 @@ section {
     font-size: 0.9rem;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     line-height: 1.5;
+}
+
+/* Freelancing Section */
+.freelance-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin: 1rem auto;
+    max-width: 1200px;
+}
+
+.detail-group {
+    background-color: var(--surface);
+    padding: 1rem;
+    border-radius: 4px;
+    border: 1px solid rgba(210, 217, 212, 0.15);
+}
+
+.detail-group h4 {
+    color: var(--accent);
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+
+.detail-group ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.detail-group li {
+    color: var(--grey-light);
+    margin-bottom: 0.4rem;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    text-align: left;
+}
+
+.detail-group li:before {
+    content: "• ";
+    color: var(--accent);
+    margin-right: 0.5rem;
+    font-weight: normal;
 }
 
 /* Footer */
@@ -969,6 +1074,26 @@ footer {
     .project-card {
         flex: 0 0 300px;
         min-width: 300px;
+    }
+
+    /* Horizontal scrolling for freelancing on mobile */
+    .freelance-details {
+        display: flex;
+        overflow-x: auto;
+        gap: 1rem;
+        margin: 2rem 0;
+        padding-bottom: 1rem;
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE and Edge */
+    }
+
+    .freelance-details::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera */
+    }
+
+    .detail-group {
+        flex: 0 0 280px;
+        min-width: 280px;
     }
 
     /* Compressed hero for mobile */
