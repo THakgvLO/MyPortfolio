@@ -1,227 +1,153 @@
-// Mobile Navigation Toggle
-const hamburger = document.querySelector('.hamburger');
-const navLinks = document.querySelector('.nav-links');
-
-hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-});
-
-// Smooth Scrolling
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        
-        navLinks.classList.remove('active');
-        
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        const headerHeight = document.querySelector('header').offsetHeight;
-        
-        window.scrollTo({
-            top: targetElement.offsetTop - headerHeight - 10,
-            behavior: 'smooth'
-        });
-    });
-});
-
-// Year Tabs Toggle
-function showYear(year) {
-    // Hide all groups
-    document.querySelectorAll('.journey-group').forEach(group => {
-        group.style.display = 'none';
-    });
-    // Show selected group
-    document.getElementById('group-' + year).style.display = 'block';
-    // Update active tab
-    document.querySelectorAll('.year-tab').forEach(tab => {
-        tab.classList.remove('active');
-    });
-    event.target.classList.add('active');
-}
-
-// Scroll Reveal Animation
-const fadeElements = document.querySelectorAll('.fade-in');
-
-const revealOnScroll = () => {
-    const windowHeight = window.innerHeight;
-    
-    fadeElements.forEach(element => {
-        const elementTop = element.getBoundingClientRect().top;
-        
-        if (elementTop < windowHeight - 100) {
-            element.classList.add('visible');
-        }
-    });
-};
-
-window.addEventListener('scroll', () => {
-    revealOnScroll();
-});
-
-// Trigger on load
-window.addEventListener('load', () => {
-    revealOnScroll();
-});
-
-// Project Modal
-const projectCards = document.querySelectorAll('.project-card');
+﻿const year = document.getElementById('year');
+const navToggle = document.querySelector('.nav-toggle');
+const siteNav = document.getElementById('site-nav');
 const modal = document.getElementById('projectModal');
-const closeModal = document.querySelector('.close-modal');
-const modalTitle = document.getElementById('modalTitle');
 const modalImage = document.getElementById('modalImage');
+const modalTitle = document.getElementById('modalTitle');
 const modalTags = document.getElementById('modalTags');
 const modalDescription = document.getElementById('modalDescription');
-const modalTechnologies = document.getElementById('modalTechnologies');
-const modalChallenges = document.getElementById('modalChallenges');
-const modalLink = document.getElementById('modalLink');
+const modalTools = document.getElementById('modalTools');
+const modalFocus = document.getElementById('modalFocus');
+const modalLinks = document.getElementById('modalLinks');
+const modalClose = document.querySelector('.modal-close');
+const projectCards = document.querySelectorAll('.project-card');
 
-const projects = {
-    1: {
-        title: "HydroInsight - Water Quality Monitoring Platform",
-        image: "assets/project-images/southern-africa-rivers.jpg",
-        tags: ["Python", "Javascript", "Data Visualization", "Leaflet Charts", "Statistics"],
-        description: "A comprehensive dashboard that visualizes water quality parameters across South African provinces. This project automated the collection of data from the Department of Water and Sanitation's trusted source, the National Integrated Water Information System (NIWIS). Then it was processed using Python scripts, and displayed as an interactive map and visualization dashboard for stakeholders and the public.",
-        technologies: "Built with: HTML, CSS, Javascript, Python, JSON",
-        challenges: "Challenge: Different data formats and inconsistent API responses.<br>Solution: Created a robust data cleaning pipeline and implemented error handling to ensure continuous data flow.",
-        link: "https://github.com/THakgvLO/HydroInsight",
-        live: "https://hydroinsight.netlify.app" // Only for HydroInsight
-    },
-    2: {
-        title: "Analyzing Urban Heat and Climate Impacts in Pretoria",
-        image: "assets/project-images/hot-cities-map.png",
-        tags: ["Python", "Remote Sensing", "Spatial Analysis", "Urban Heat Islands", "Climate Change"],
-        description: "This project investigates urban heat island effects in Pretoria using Python-based spatial analysis and remote sensing data. By examining temperature variations across the city and surrounding Gauteng region, the study reveals how land use and vegetation cover influence local climate dynamics. Peer-reviewed literature supports the methodology and interpretation, ensuring scientific rigor throughout.",
-        technologies: "Built with: Python, Jupyter Notebook, Plotly, Matplotlib",
-        challenges: "Challenge: Ensuring statistical accuracy in climate inference<br>Solution: Applied correlation metrics and p-values to validate observed patterns",
-        link: "https://github.com/THakgvLO/climate-variability-sa"
-    },
-    3: {
-    title: "ClearVue Business Intelligence System",
-    image: "assets/project-images/data-analytics--business-intelligence-maturity-model---infographic-01-1.jpg",
-    tags: ["Python", "Power BI", "Pandas", "Data Modelling", "MongoDB", "Semantic Cleanup", "Dashboard Automation", "Warehousing", "Retail Intelligence", "Workflow Design"],
-    description: "This is a uni group project for Advanced Databases, the below link leads to the forked GitHub repository. The project automates the transformation of ClearVue's raw retail data into structured insights using Python scripting and Power BI dashboards. It includes semantic cleanup, customer category mapping, and dynamic filtering for sales analysis. Designed for scalability and reproducibility, the system supports future collaborators through clear documentation and modular code.",
-    technologies: "Built with: Python, Jupyter Notebook, MongoDB, Kafka",
-    challenges: "Challenge: Inconsistent category naming and fragmented data sources<br>Solution: Built a reusable data cleaning pipeline with rule-based mapping and documentation.",
-    link: "https://github.com/THakgvLO/ClearVue-BI-System"
-    },
-    4: {
-    title: "EV Fleet Viability Model",
-    image: "assets/project-images/ev.jpeg",
-    tags: ["Python", "Data Science", "Machine Learning", "Data Modelling", "Artificial Intelligence", "Electric Vehicles"],
-    description: "This was a hackathon project for the SATNAC Industry Solutions Challenge 2025. The topic was on building a system that will allow Openserve to determine viable EV-charging sites around South Africa using Artificial Intelligence. ",
-    technologies: "Built with: Python, Javascript, Scikit-Learn",
-    challenges: "Challenge: Develop a decision-support tool to guide Openserve's transition to Electric Vehicles (EVs) in South Africa<br>Solution: Used K-Means clustering on weighted scores to generate Green/Amber/Red rollout categories.",
-    link: "https://github.com/THakgvLO/satnac-openserve-project",
-    live: "https://eagles-ev.netlify.app/"
-    }
-};
+const projects = [
+  {
+    id: 1,
+    title: 'HydroInsight',
+    image: 'assets/project-images/southern-africa-rivers.jpg',
+    description: 'A public-facing dashboard that turns water quality monitoring data into an interactive, easier-to-read system for environmental reporting.',
+    tools: 'Python, Leaflet, statistics, GIS',
+    focus: 'Water quality monitoring and accessible environmental insight',
+    tags: ['Python', 'Leaflet', 'Statistics', 'GIS'],
+    links: [
+      { label: 'Repo', href: 'https://github.com/THakgvLO/HydroInsight' },
+      { label: 'Live', href: 'https://hydroinsight.netlify.app/' }
+    ]
+  },
+  {
+    id: 2,
+    title: 'ClearVue BI System',
+    image: 'assets/project-images/data-analytics--business-intelligence-maturity-model---infographic-01-1.jpg',
+    description: 'A retail intelligence workflow that brought messy source data into a structured and reusable BI process.',
+    tools: 'Power BI, ETL, data cleaning, dashboards',
+    focus: 'Reliable reporting and decision support',
+    tags: ['Power BI', 'ETL', 'Data cleaning', 'Retail intelligence'],
+    links: [
+      { label: 'Repo', href: 'https://github.com/THakgvLO/ClearVue-BI-System' }
+    ]
+  },
+  {
+    id: 3,
+    title: 'EV Fleet Viability Model',
+    image: 'assets/project-images/ev.jpeg',
+    description: 'A decision-support model for guiding EV charging site prioritisation with a structured, explainable approach.',
+    tools: 'Python, K-means clustering, sustainability analysis',
+    focus: 'Strategic planning and infrastructure prioritisation',
+    tags: ['Python', 'K-means clustering', 'Sustainability', 'Strategy'],
+    links: [
+      { label: 'Repo', href: 'https://github.com/THakgvLO/satnac-openserve-project' },
+      { label: 'Live', href: 'https://eagles-ev.netlify.app/' }
+    ]
+  },
+  {
+    id: 4,
+    title: 'Urban Heat Analysis',
+    image: 'assets/project-images/hot-cities-map.png',
+    description: 'A spatial analysis project focused on climate patterns and urban heat behaviour in South African cities.',
+    tools: 'Python, statistics, remote sensing, geospatial analysis',
+    focus: 'Climate insight and urban heat interpretation',
+    tags: ['Python', 'Statistics', 'Remote sensing', 'Climate'],
+    links: [
+      { label: 'Repo', href: 'https://github.com/THakgvLO/climate-variability-sa' }
+    ]
+  }
+];
 
-projectCards.forEach(card => {
-    card.addEventListener('click', () => {
-        const projectId = card.getAttribute('data-project');
-        const project = projects[projectId];
-        
-        modalTitle.textContent = project.title;
-        modalImage.src = project.image;
-        modalLink.href = project.link;
-        modalLink.onclick = () => {
-            window.open(project.link, '_blank');
-        };
+function openProject(projectId) {
+  const project = projects.find((item) => item.id === Number(projectId));
+  if (!project || !modal) {
+    return;
+  }
 
-        const liveButton = document.getElementById('modalLive');
+  modalImage.src = project.image;
+  modalImage.alt = project.title;
+  modalTitle.textContent = project.title;
+  modalDescription.textContent = project.description;
+  modalTools.textContent = project.tools;
+  modalFocus.textContent = project.focus;
 
-        if (project.live) {
-            liveButton.style.display = 'inline-block';
-            liveButton.href = project.live;
-            liveButton.setAttribute('target', '_blank');
-            liveButton.setAttribute('rel', 'noopener noreferrer');
-            liveButton.onclick = (e) => {
-                e.preventDefault();
-                window.open(project.live, '_blank');
-            };
-        } else {
-            liveButton.style.display = 'none';
-        }
+  modalTags.innerHTML = '';
+  project.tags.forEach((tag) => {
+    const chip = document.createElement('span');
+    chip.textContent = tag;
+    modalTags.appendChild(chip);
+  });
 
+  modalLinks.innerHTML = '';
+  project.links.forEach((link) => {
+    const anchor = document.createElement('a');
+    anchor.href = link.href;
+    anchor.target = '_blank';
+    anchor.rel = 'noreferrer';
+    anchor.textContent = link.label;
+    modalLinks.appendChild(anchor);
+  });
 
-        
-        // Clear and populate tags
-        modalTags.innerHTML = '';
-        project.tags.forEach(tag => {
-            const tagElement = document.createElement('span');
-            tagElement.className = 'modal-tag';
-            tagElement.textContent = tag;
-            modalTags.appendChild(tagElement);
-        });
-        
-        // Populate content
-        modalDescription.innerHTML = `<h3>Description</h3><p>${project.description}</p>`;
-        modalTechnologies.innerHTML = `<h3>Technologies</h3><p>${project.technologies}</p>`;
-        modalChallenges.innerHTML = `<h3>Challenges & Solutions</h3><p>${project.challenges}</p>`;
-        
-        // Show modal
-        modal.style.display = 'flex';
-        document.body.style.overflow = 'hidden';
-    });
-
-    card.addEventListener('click', () => {
-        gtag('event', 'project_view', {
-            'event_category': 'engagement',
-            'event_label': modalTitle.textContent
-        });
-    });
-});
-
-// Close modal
-closeModal.addEventListener('click', () => {
-    modal.style.display = 'none';
-    document.body.style.overflow = 'auto';
-});
-
-// Close modal when clicking outside
-window.addEventListener('click', (e) => {
-    if (e.target === modal) {
-        modal.style.display = 'none';
-        document.body.style.overflow = 'auto';
-    }
-});
-
-// Download CV button
-const downloadCV = document.getElementById('downloadCV');
-
-downloadCV.addEventListener('click', function(e) {
-    e.preventDefault();
-    //const fileId = '1zmB4go5rItTamy0VvxHpdfp0Bd6xcxZl';
-    const fileId = '1I0yJkG5XCof4hyZ0udVAH5OX9J7hCeV8';
-    const downloadUrl = `https://drive.google.com/uc?export=download&id=${fileId}`;
-    
-    console.log('CV Download initiated');
-    window.open(downloadUrl, '_blank');
-
-    gtag('event', 'cv_download', {
-        'event_category': 'engagement',
-        'event_label': 'CV Download'
-    });
-});
-
-// Tagline Animation
-const taglines = document.querySelectorAll('.tagline');
-let currentTagline = 0;
-
-function rotateTaglines() {
-    // Hide all taglines
-    taglines.forEach(tagline => {
-        tagline.style.opacity = '0';
-        tagline.style.transform = 'translateY(20px)';
-    });
-    
-    // Show current tagline
-    taglines[currentTagline].style.opacity = '1';
-    taglines[currentTagline].style.transform = 'translateY(0)';
-    
-    // Update current tagline
-    currentTagline = (currentTagline + 1) % taglines.length;
+  modal.classList.add('is-open');
+  modal.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
 }
 
-// Start rotation after initial animation
-setInterval(rotateTaglines, 6000);
+function closeModal() {
+  if (!modal) {
+    return;
+  }
+
+  modal.classList.remove('is-open');
+  modal.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
+
+if (year) {
+  year.textContent = new Date().getFullYear();
+}
+
+if (navToggle && siteNav) {
+  navToggle.addEventListener('click', () => {
+    const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+    navToggle.setAttribute('aria-expanded', String(!expanded));
+    siteNav.classList.toggle('is-open');
+  });
+
+  siteNav.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      siteNav.classList.remove('is-open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+}
+
+projectCards.forEach((card) => {
+  const openCard = () => openProject(card.getAttribute('data-project'));
+  card.addEventListener('click', openCard);
+  card.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      openCard();
+    }
+  });
+});
+
+modalClose?.addEventListener('click', closeModal);
+modal?.addEventListener('click', (event) => {
+  if (event.target === modal) {
+    closeModal();
+  }
+});
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && modal?.classList.contains('is-open')) {
+    closeModal();
+  }
+});
