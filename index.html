@@ -15,242 +15,119 @@
 <body>
   <header class="site-header">
     <nav class="nav-bar container" aria-label="Main navigation">
-      <a class="brand" href="#home">Thakgalo Sehlola</a>
+      <a class="brand" href="#home">THAKGALO</a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation">
         <span></span>
         <span></span>
         <span></span>
       </button>
       <div id="site-nav" class="nav-links">
-        <a href="#summary">Summary</a>
-        <a href="#skills">Skills</a>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
         <a href="#work">Projects</a>
         <a href="#contact">Contact</a>
       </div>
     </nav>
   </header>
 
-  <main id="home">
-    <section class="hero container">
-      <div class="hero-copy">
-        <p class="eyebrow">Data Scientist • Data Engineer • Test Automation Engineer</p>
-        <h1>I build practical data systems that turn information into clear decisions.</h1>
-        <p class="lead">
-          I combine machine learning, statistical analysis, data engineering, cloud platforms, and test automation to build reliable solutions for analytics, reporting, and operational data systems.
-        </p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="#work">See projects</a>
-          <a class="button button-secondary" href="https://drive.google.com/file/d/11qbilxJhadGJTNCACZOvxUcdlHBamvjT/view?usp=sharing" target="_blank" rel="noreferrer">Open CV</a>
-        </div>
-        <div class="hero-pills">
-          <span>Python</span>
-          <span>SQL</span>
-          <span>Power BI</span>
-          <span>GIS</span>
-          <span>AWS</span>
-          <span>Automation</span>
-        </div>
-      </div>
-    </section>
+  <main id="home" class="container page-shell">
+    <div class="portfolio-grid">
+      <article class="collage-card about-card" data-card="about" tabindex="0" role="button" aria-label="Open About details">
+        <div class="card-label">About me</div>
+        <div class="profile-portrait" aria-hidden="true"></div>
+        <h2>Hi, I’m Thakgalo.</h2>
+        <p>Data scientist, analytics engineer, and automation builder.</p>
+      </article>
 
-    <section id="summary" class="section container">
-      <div class="section-heading">
-        <p class="eyebrow">Professional summary</p>
-        <h2>From analytics to pipelines, I build systems that are useful and dependable.</h2>
-      </div>
-      <div class="summary-grid">
-        <article class="summary-card">
-          <h3>What I bring</h3>
-          <p>I enjoy solving complex problems by combining analytical thinking with practical implementation.</p>
-          <p>My work sits at the intersection of data, systems, and automation, with a focus on building dependable solutions.</p>
-        </article>
-        <article class="summary-card">
-          <h3>Education</h3>
-          <p><strong>BSc in Environmental Sciences with Geography and Computer Science</strong><br />North-West University<br /></p>
-          <p><strong>Postgraduate Diploma in Data Science</strong><br />Stadio Higher Education<br /></p>
-        </article>
-      </div>
-    </section>
+      <article class="collage-card mini-card" data-card="status" tabindex="0" role="button" aria-label="Open status details">
+        <div class="card-label">Status</div>
+        <div class="status-row"><span class="status-dot"></span> Online</div>
+      </article>
 
-    <section id="skills" class="section section-alt">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">Capabilities</p>
-          <h2>Skills I work with</h2>
+      <article class="collage-card mini-card weather-card" data-card="weather" tabindex="0" role="button" aria-label="Open weather details">
+        <div class="card-label">Weather</div>
+        <div class="weather-block">
+          <strong id="weatherTime">--:--</strong>
+          <span id="weatherCondition">Overcast</span>
+          <small id="weatherSecondary" class="weather-secondary"></small>
         </div>
-        <div class="skill-grid">
-          <div class="skill-card">
-            <h3>Machine learning &amp; analytics</h3>
-            <div class="chip-row">
-              <span>Regression</span>
-              <span>Classification</span>
-              <span>Clustering</span>
-              <span>Hypothesis testing</span>
-              <span>NLP</span>
-            </div>
-          </div>
-          <div class="skill-card">
-            <h3>Data engineering</h3>
-            <div class="chip-row">
-              <span>SQL</span>
-              <span>ETL/ELT</span>
-              <span>Data modelling</span>
-              <span>Kafka</span>
-              <span>MongoDB</span>
-            </div>
-          </div>
-          <div class="skill-card">
-            <h3>Programming &amp; testing</h3>
-            <div class="chip-row">
-              <span>Python</span>
-              <span>Java</span>
-              <span>Selenium</span>
-              <span>Appium</span>
-              <span>TestNG</span>
-              <span>Maven</span>
-            </div>
-          </div>
-          <div class="skill-card">
-            <h3>Cloud &amp; platforms</h3>
-            <div class="chip-row">
-              <span>AWS</span>
-              <span>Microsoft Fabric</span>
-              <span>Azure Fundamentals</span>
-              <span>Power Platform</span>
-              <span>CI/CD</span>
-            </div>
-          </div>
-          <div class="skill-card">
-            <h3>GIS &amp; spatial</h3>
-            <div class="chip-row">
-              <span>ArcGIS Pro</span>
-              <span>QGIS</span>
-              <span>Remote sensing</span>
-              <span>Spatial analysis</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+      </article>
 
-    <section id="work" class="section container">
-      <div class="section-heading">
-        <p class="eyebrow">Selected work</p>
-        <h2>Projects I have built</h2>
-      </div>
-      <div class="project-track">
-        <article class="project-card" data-project="1" tabindex="0" role="button" aria-label="Open HydroInsight details">
-          <img src="assets/project-images/southern-africa-rivers.jpg" alt="HydroInsight project preview" />
-          <div class="project-body">
-            <h3>HydroInsight</h3>
-            <p>Water quality monitoring platform with an interactive dashboard for environmental analysis and reporting.</p>
-            <div class="chip-row">
-              <span>Python</span>
-              <span>Leaflet</span>
-              <span>Statistics</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/THakgvLO/HydroInsight" target="_blank" rel="noreferrer">Repo</a>
-              <a href="https://hydroinsight.netlify.app/" target="_blank" rel="noreferrer">Live</a>
-            </div>
-          </div>
-        </article>
-        <article class="project-card" data-project="2" tabindex="0" role="button" aria-label="Open ClearVue BI details">
-          <img src="assets/project-images/data-analytics--business-intelligence-maturity-model---infographic-01-1.jpg" alt="ClearVue BI project preview" />
-          <div class="project-body">
-            <h3>ClearVue BI System</h3>
-            <p>Retail intelligence workflow that turned messy source data into a structured and reusable BI process.</p>
-            <div class="chip-row">
-              <span>Power BI</span>
-              <span>ETL</span>
-              <span>Kafka</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/THakgvLO/ClearVue-BI-System" target="_blank" rel="noreferrer">Repo</a>
-            </div>
-          </div>
-        </article>
-        <article class="project-card" data-project="3" tabindex="0" role="button" aria-label="Open EV fleet viability details">
-          <img src="assets/project-images/ev.jpeg" alt="EV Fleet Viability Model preview" />
-          <div class="project-body">
-            <h3>EV Fleet Viability Model</h3>
-            <p>Decision-support model for evaluating EV charging site viability using AI and structured analysis.</p>
-            <div class="chip-row">
-              <span>Python</span>
-              <span>K-means clustering</span>
-              <span>Sustainability</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/THakgvLO/satnac-openserve-project" target="_blank" rel="noreferrer">Repo</a>
-              <a href="https://eagles-ev.netlify.app/" target="_blank" rel="noreferrer">Live</a>
-            </div>
-          </div>
-        </article>
-        <article class="project-card" data-project="4" tabindex="0" role="button" aria-label="Open urban heat analysis details">
-          <img src="assets/project-images/hot-cities-map.png" alt="Urban heat analysis project preview" />
-          <div class="project-body">
-            <h3>Urban Heat Analysis</h3>
-            <p>Spatial and statistical analysis of climate variability and urban heat patterns across South Africa.</p>
-            <div class="chip-row">
-              <span>Python</span>
-              <span>Statistics</span>
-              <span>Remote sensing</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/THakgvLO/climate-variability-sa" target="_blank" rel="noreferrer">Repo</a>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section id="certifications" class="section section-alt">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">Certifications</p>
-          <h2>Credentials and training</h2>
+      <article class="collage-card large-card map-card" data-card="location" tabindex="0" role="button" aria-label="Open location details">
+        <div class="map-visual" id="mapVisual" aria-hidden="true"></div>
+        <div class="map-controls" aria-label="Map zoom controls">
+          <button type="button" class="map-control" data-map-zoom="in" aria-label="Zoom in">+</button>
+          <button type="button" class="map-control" data-map-zoom="out" aria-label="Zoom out">−</button>
         </div>
-        <div class="cert-grid">
-          <span>AWS Certified Cloud Practitioner</span>
-          <span>AWS Solutions Architect Associate</span>
-          <span>AWS AI &amp; Machine Learning Engineer Nanodegree</span>
-          <span>Azure Fundamentals</span>
-          <span>Fabric Analytics Engineer Associate</span>
-          <span>Power Platform Up Program</span>
-        </div>
-      </div>
-    </section>
+        <div class="map-label">South Africa</div>
+      </article>
 
-    <section id="contact" class="section container">
-      <div class="section-heading">
-        <p class="eyebrow">Contact</p>
-        <h2>Let’s connect</h2>
-      </div>
-      <p>Email: <a href="mailto:slthakgalo04@gmail.com">slthakgalo04@gmail.com</a></p>
-      <div class="contact-links">
-        <a href="https://www.linkedin.com/in/thakgalo-sehlola" target="_blank" rel="noreferrer">LinkedIn</a>
-        <a href="https://github.com/THakgvLO" target="_blank" rel="noreferrer">GitHub</a>
-        <a href="https://drive.google.com/file/d/11qbilxJhadGJTNCACZOvxUcdlHBamvjT/view?usp=sharing" target="_blank" rel="noreferrer">View CV</a>
-      </div>
-    </section>
+      <article class="collage-card mini-card photo-card" data-card="photos" tabindex="0" role="button" aria-label="Open photos details">
+        <div class="card-label">Photos</div>
+        <div class="photo-thumb" aria-hidden="true"></div>
+      </article>
+
+      <article class="collage-card blog-card" data-card="blog" tabindex="0" role="button" aria-label="Open blog details">
+        <div class="card-label">Blog</div>
+        <h3>Why business intelligence matters</h3>
+        <p>Data clarity helps teams act faster and with more confidence.</p>
+      </article>
+
+      <article class="collage-card mini-card skills-card" data-card="skills" tabindex="0" role="button" aria-label="Open skills details">
+        <div class="card-label">Tools</div>
+        <p>Python • SQL • AWS • Power BI</p>
+      </article>
+    </div>
   </main>
 
-  <div class="modal" id="projectModal" aria-hidden="true">
-    <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-      <button class="modal-close" type="button" aria-label="Close project details">×</button>
-      <img id="modalImage" src="" alt="" />
+  <section id="work" class="container compact-projects">
+    <div class="section-head">
+      <p class="eyebrow">Projects</p>
+      <h2>Selected work</h2>
+    </div>
+    <div class="project-grid">
+      <article class="project-item" style="--project-bg: url('assets/project-images/southern-africa-rivers.jpg');">
+        <h3>HydroInsight</h3>
+        <p>Water quality dashboard for environmental reporting.</p>
+        <a href="https://hydroinsight.netlify.app/" target="_blank" rel="noreferrer">Live</a>
+      </article>
+      <article class="project-item" style="--project-bg: url('assets/project-images/data-analytics--business-intelligence-maturity-model---infographic-01-1.jpg');">
+        <h3>ClearVue BI</h3>
+        <p>Retail intelligence and reporting workflow.</p>
+        <a href="https://github.com/THakgvLO/ClearVue-BI-System" target="_blank" rel="noreferrer">Repo</a>
+      </article>
+      <article class="project-item" style="--project-bg: url('assets/project-images/ev.jpeg');">
+        <h3>EV Fleet Model</h3>
+        <p>EV charging viability and prioritisation model.</p>
+        <a href="https://eagles-ev.netlify.app/" target="_blank" rel="noreferrer">Live</a>
+      </article>
+    </div>
+  </section>
+
+  <section id="contact" class="container contact-strip">
+    <div class="section-head">
+      <p class="eyebrow">Contact</p>
+      <h2>Let’s talk.</h2>
+    </div>
+    <div class="contact-links">
+      <a href="mailto:slthakgalo04@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/thakgalo-sehlola" target="_blank" rel="noreferrer">LinkedIn</a>
+      <a href="https://github.com/THakgvLO" target="_blank" rel="noreferrer">GitHub</a>
+    </div>
+  </section>
+
+  <div class="modal" id="detailModal" aria-hidden="true">
+    <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="detailTitle">
+      <button class="modal-close" type="button" aria-label="Close details">×</button>
       <div class="modal-content">
-        <p class="eyebrow">Project</p>
-        <h3 id="modalTitle"></h3>
-        <div id="modalTags" class="chip-row"></div>
-        <p id="modalDescription"></p>
-        <p><strong>Tools:</strong> <span id="modalTools"></span></p>
-        <p><strong>Focus:</strong> <span id="modalFocus"></span></p>
-        <div id="modalLinks" class="project-links"></div>
+        <p class="eyebrow modal-kicker" id="detailKicker">Details</p>
+        <h3 id="detailTitle">Title</h3>
+        <div id="detailBody" class="modal-body"></div>
+        <div id="detailLinks" class="modal-links"></div>
       </div>
     </div>
   </div>
 
-  <script src="script.js?v=20260704f"></script>
+  <script src="script.js?v=20260907"></script>
 </body>
 </html>
