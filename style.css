@@ -661,8 +661,7 @@ button {
     padding-top: 1.2rem;
   }
 
-  .hero-actions,
-  .contact-links {
+  .hero-actions {
     flex-direction: column;
     align-items: flex-start;
   }
